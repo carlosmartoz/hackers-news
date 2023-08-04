@@ -21,5 +21,9 @@ module.exports = {
     project: './tsconfig.json'
   },
   plugins: ['react'],
-  rules: { '@typescript-eslint/triple-slash-reference': 'off', 'react/react-in-jsx-scope': 'off' }
+  rules: {
+    '@typescript-eslint/triple-slash-reference': 'off',
+    'react/react-in-jsx-scope': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off'
+  }
 }
