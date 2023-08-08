@@ -14,10 +14,6 @@
 ![](https://img.shields.io/badge/TypeScript-informational?style=for-the-badge&logo=typescript&logoColor=edf2f4&color=0b1622&labelColor=ff0000)
 ![](https://img.shields.io/badge/ReactJS-informational?style=for-the-badge&logo=react&logoColor=edf2f4&color=0b1622&labelColor=ff0000)
 
-## 🚨 Forking this repository
-
-You are free to fork this repository, either to see the code or use the portfolio, always giving the respective credits. 💪🏻
-
 ## 🛠 Installation & Set Up
 
 1. Install dependencies
