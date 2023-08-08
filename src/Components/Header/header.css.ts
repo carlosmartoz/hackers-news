@@ -1,8 +1,12 @@
 import { style } from '@vanilla-extract/css'
 
+// Header
 export const header = style({
-  padding: '32px',
-  borderBottom: '1px solid #eeeeee'
+  padding: 32,
+  width: '100%',
+  fontWeight: 500,
+  borderBottom: '1px solid #dddddd',
+  fontFamily: 'Cinzel Decorative, cursive'
 })
 
 export const nav = style({
@@ -12,12 +16,11 @@ export const nav = style({
 })
 
 export const heading = style({
-  lineHeight: '1',
-  color: '#374151',
-  fontSize: '32px'
+  fontSize: 32,
+  lineHeight: 1
 })
 
 export const link = style({
-  color: '#374151',
+  color: '#081b33',
   textDecoration: 'none'
 })

@@ -1,16 +1,21 @@
-import './App.css'
 import { Route } from 'wouter'
 import { Suspense } from 'react'
+import { main } from './app.css'
+import Stories from '../Page/Stories'
+import Comments from '../Page/Comments'
 import { Header } from '../Components/Header'
-import TopStoriesPage from '../Page/ToptoriesPage'
 
+// App
 export default function App () {
   return (
     <>
       <Header />
-      <main>
+
+      <main className={main}>
         <Suspense fallback={null}>
-          <Route path="/" component={TopStoriesPage} />
+          <Route path="/" component={Stories} />
+
+          <Route path="/article/:id" component={Comments} />
         </Suspense>
       </main>
     </>

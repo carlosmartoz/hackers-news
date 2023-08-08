@@ -1,58 +1,45 @@
-import { Link } from 'wouter'
 import useSWR from 'swr'
-import { storyLink, story, storyFooter, storyHeader, storyTitle } from './story.css'
-
-import { getRelativeTime } from '../../Utils/getRelativeTime'
-import { getItemInfo } from '../../Services/hacker-news'
+import { Link } from 'wouter'
 import { StoryLoader } from '../StoryLoader'
+import { BiTime, BiCommentDetail } from 'react-icons/bi'
+import { getItemInfo } from '../../Services/hacker-news'
+import { getRelativeTime } from '../../Utils/getRelativeTime'
+import { storyContent, storyTitle, storyLink, storyInformation, storyInformationLink } from './story.css'
 
-export const Story = (props: { id: number, index: number }) => {
-  const { id, index } = props
-
+// Story
+export const Story = ({ id }: { id: number }) => {
+  // Fetching Story Data
   const { data, isLoading } = useSWR(`/story/${id}`, async () => await getItemInfo(id))
 
-  if (isLoading) {
-    // enseñar el placeholder
-    return <StoryLoader />
-  }
-
-  const { by, kids, score, title, url, time } = data
-  console.log(data)
-
-  let domain = ''
-  try {
-    domain = new URL(url).hostname.replace('www.', '')
-  } catch {}
-
-  // TODO: Create relativeTime
-  const relativeTime = getRelativeTime(time)
-
   return (
-    <article className={story}>
-      <header className={storyHeader}>
-        <small>{index + 1}.</small>
-        <a className={storyTitle} href={url} target="_blank" rel="noopener noreferrer">
-          {title}
-        </a>
+    <>
+      {isLoading
+        ? (
+        <StoryLoader />
+          )
+        : (
+        <article className={storyContent}>
+          <header>
+            <h3 className={storyTitle}>
+              <a href={data.url} target="_blank" rel="noopener noreferrer" className={storyLink}>
+                {data.title}
+              </a>
+            </h3>
+          </header>
 
-        <a className={storyLink} href={url} target="_blank" rel="noopener noreferrer">
-          ({domain})
-        </a>
-      </header>
+          <footer className={storyContent}>
+            <span className={storyInformation}>
+              <BiTime size="16px" />{' '}
+              <time dateTime={new Date(data.time * 1000).toISOString()}>{getRelativeTime(data.time)}</time> by {data.by}{' '}
+            </span>
 
-      <footer className={storyFooter}>
-        <span>{score} points</span>
-
-        <Link className={storyLink} href={`/article/${id}`}>
-          by {by}
-        </Link>
-        <Link className={storyLink} href={`/article/${id}`}>
-          <time dateTime={new Date(time * 1000).toISOString()}>{relativeTime}</time>
-        </Link>
-        <Link className={storyLink} href={`/article/${id}`}>
-          {kids?.length ?? 0} comments
-        </Link>
-      </footer>
-    </article>
+            <Link href={`/article/${id}`} className={storyInformationLink}>
+              <BiCommentDetail size="16px" />
+              {data.kids?.length ?? 0} comments
+            </Link>
+          </footer>
+        </article>
+          )}
+    </>
   )
 }
