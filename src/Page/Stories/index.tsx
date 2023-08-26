@@ -1,24 +1,49 @@
-import { grid, item } from './stories.css'
-import { Story } from '../../Components/Story'
+// Styles
+import { section, grid, item, button } from './stories.css'
+
+// Hooks
 import { useStories } from '../../Hooks/useStories'
 
-// Stories
+// Components
+import { Nav } from '../../Components/Nav'
+import { Story } from '../../Components/Story'
+import { StoryLoader } from '../../Components/StoryLoader'
+
 export default function Stories () {
-  // Stories Custom Hook
-  const { stories, scrollIndicator, isLoading } = useStories()
+  // Use the custom Stories Hook
+  const { stories, isLoading, isLoadingMore, handleLoadMore } = useStories()
 
   return (
     <>
-      <section className="stories">
+      <section className={section}>
+        <Nav />
+
         <ul className={grid}>
-          {stories?.map((story) => (
-            <li key={story.id} className={item}>
-              <Story id={story.id} />
-            </li>
-          ))}
+          {isLoading ? (
+            // Render 10 Loaders to simulate loading
+            <>
+              {Array.from({ length: 10 }, (_, index) => (
+                <li key={index} className={item}>
+                  <StoryLoader />
+                </li>
+              ))}
+            </>
+          ) : (
+            // Render the Stories when they are ready
+            <>
+              {stories?.map((story) => (
+                <li key={story.id} className={item}>
+                  <Story id={story.id} />
+                </li>
+              ))}
+            </>
+          )}
         </ul>
 
-        {!isLoading && <span ref={scrollIndicator}>.</span>}
+        {/* Button to load more Stories */}
+        <button onClick={handleLoadMore} className={button} disabled={isLoadingMore}>
+          {isLoadingMore ? 'Loading...' : 'Load more'}
+        </button>
       </section>
     </>
   )

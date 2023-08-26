@@ -1,11 +1,15 @@
-import { useEffect, useRef } from 'react'
+// React
+import { useState } from 'react'
+
+// SWR
 import useSWRInfinite from 'swr/infinite'
+
+// Services
 import { getStories } from '../../Services/hacker-news'
 
-// Custom Hook
 export function useStories () {
   // Fetching stories using SWRInfinite hook
-  const { data, isLoading, setSize } = useSWRInfinite(
+  const { data, isLoading, setSize, size } = useSWRInfinite(
     // Generating the key for each page
     (index) => `stories/${index + 1}`,
     // Fetching data for a given key (page)
@@ -20,31 +24,28 @@ export function useStories () {
   // Flattening the nested data array
   const stories = data?.flat()
 
-  // Creating a reference for the scroll indicator element
-  const scrollIndicator = useRef<HTMLSpanElement>(null)
+  // State for indicating whether more data is being loaded
+  const [isLoadingMore, setIsLoadingMore] = useState(false)
 
-  useEffect(() => {
-    // Creating an IntersectionObserver to detect scroll indicator visibility
-    const observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting && !isLoading) {
-        // When the scroll indicator becomes visible and data is not loading, increase the page size
-        void setSize((prevSize) => prevSize + 1)
-      }
-    })
+  // Manage the state to give feedback about loading state
+  const handleLoadMore = () => {
+    setIsLoadingMore(true)
 
-    if (scrollIndicator.current == null) {
-      return
-    }
+    setSize(size + 1)
+      .then(() => {
+        setIsLoadingMore(false)
 
-    // Attaching the IntersectionObserver to the scroll indicator element
-    observer.observe(scrollIndicator.current)
+        // Scroll to the bottom smoothly after loading more data
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: 'smooth'
+        })
+      })
+      .catch(() => {
+        setIsLoadingMore(false)
+      })
+  }
 
-    // Clean up the observer when the component unmounts or when the observer changes
-    return () => {
-      observer.disconnect()
-    }
-  }, [isLoading, setSize])
-
-  // Returning the fetched stories, scroll indicator reference, and loading state
-  return { stories, scrollIndicator, isLoading }
+  // Returning the fetched stories, scroll indicator reference, loading state, and load more handler
+  return { stories, isLoading, setSize, size, isLoadingMore, handleLoadMore }
 }

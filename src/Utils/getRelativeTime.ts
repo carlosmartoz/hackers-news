@@ -1,7 +1,7 @@
 // Mapping of time units to their corresponding seconds
 const DATE_UNITS: Record<string, number> = {
   year: 31536000, // Number of seconds in a year
-  month: 2629800, // Number of seconds in a month (approximated)
+  month: 2629800, // Approximate number of seconds in a month
   day: 86400, // Number of seconds in a day
   hour: 3600, // Number of seconds in an hour
   minute: 60, // Number of seconds in a minute
@@ -11,7 +11,13 @@ const DATE_UNITS: Record<string, number> = {
 // Create a new Intl.RelativeTimeFormat instance for relative time formatting
 const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' })
 
-// Function to calculate and format relative time based on epoch time
+/**
+ * Get the relative time string based on epoch time.
+ *
+ * @param epochTime - The epoch time in seconds.
+ * @returns The formatted relative time string.
+ */
+
 export const getRelativeTime = (epochTime: number) => {
   // Convert epoch time to milliseconds and get the current time in milliseconds
   const started = new Date(epochTime * 1000).getTime()

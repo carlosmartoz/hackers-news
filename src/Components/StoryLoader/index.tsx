@@ -1,15 +1,15 @@
-import { storyLoader, storyLoaderTitle, storyLoaderItems } from './storyLoader.css'
+// Styles
+import { loader, loaderItem } from './storyLoader.css'
 
-// StoryLoader
 export const StoryLoader = () => {
   return (
     <>
-      <article className={storyLoader}>
-        <div className={storyLoaderTitle}></div>
+      <article className={loader}>
+        <div className={loaderItem.large}></div>
 
-        <div className={storyLoader}>
-          <div className={storyLoaderItems}></div>
-          <div className={storyLoaderItems}></div>
+        <div className={loader}>
+          <div className={loaderItem.medium}></div>
+          <div className={loaderItem.small}></div>
         </div>
       </article>
     </>

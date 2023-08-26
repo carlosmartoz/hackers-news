@@ -1,22 +1,31 @@
+// SWR
 import useSWR from 'swr'
-import { CommentLoader } from '../CommentLoader'
-import { ListOfComments } from '../ListOfComments'
-import { getItemInfo } from '../../Services/hacker-news'
-import { getRelativeTime } from '../../Utils/getRelativeTime'
+
+// Styles
 import { summary, small, comment } from './comment.css'
 
-// Comment
+// Utils
+import { getRelativeTime } from '../../Utils/getRelativeTime'
+
+// Services
+import { getItemInfo } from '../../Services/hacker-news'
+
+// Components
+import { CommentLoader } from '../CommentLoader'
+import { ListOfComments } from '../ListOfComments'
+
 export const Comment = ({ id }: { id: number }) => {
   // Fetching Comment Data
   const { data, isLoading } = useSWR(`/comment/${id}`, async () => await getItemInfo(id))
 
   return (
     <>
-      {isLoading
-        ? (
-        <CommentLoader />
-          )
-        : (
+      {isLoading ? (
+        // Loader for the content
+        <>
+          <CommentLoader />
+        </>
+      ) : (
         <>
           <details open className="details">
             <summary className={summary}>
@@ -30,7 +39,7 @@ export const Comment = ({ id }: { id: number }) => {
 
           {data.kids?.length > 0 && <ListOfComments ids={data.kids.slice(0, 10)} />}
         </>
-          )}
+      )}
     </>
   )
 }

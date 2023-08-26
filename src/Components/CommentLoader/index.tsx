@@ -1,12 +1,13 @@
-import { commentLoader, commentLoaderTitle, commentLoaderItem } from './commentLoader.css'
+// Styles
+import { loader, loaderItem } from '../StoryLoader/storyLoader.css'
 
 // Comment Loader
 export const CommentLoader = () => (
   <>
-    <div className={commentLoader}>
-      <div className={commentLoaderTitle}></div>
+    <li className={loader}>
+      <span className={loaderItem.medium}></span>
 
-      <div className={commentLoaderItem}></div>
-    </div>
+      <span className={loaderItem.giant}></span>
+    </li>
   </>
 )

@@ -4,23 +4,27 @@ import { style } from '@vanilla-extract/css'
 export const header = style({
   padding: 32,
   width: '100%',
-  fontWeight: 500,
-  borderBottom: '1px solid #dddddd',
-  fontFamily: 'Cinzel Decorative, cursive'
+  borderBottom: '1px solid #dee2e6'
 })
 
+// Header Nav
 export const nav = style({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center'
 })
 
-export const heading = style({
+// Header Nav Title
+export const title = style({
   fontSize: 32,
-  lineHeight: 1
+  lineHeight: 1,
+  fontWeight: 400,
+  fontFamily: 'Lora, serif',
+  textTransform: 'uppercase'
 })
 
+// Header Nav Title Link
 export const link = style({
-  color: '#081b33',
+  color: '#212529',
   textDecoration: 'none'
 })

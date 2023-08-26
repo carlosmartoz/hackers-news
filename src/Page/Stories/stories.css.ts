@@ -1,6 +1,14 @@
 import { style } from '@vanilla-extract/css'
 
-// Stories
+// Styles for the Stories section
+export const section = style({
+  gap: 64,
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center'
+})
+
+// Styles for the grid layout
 export const grid = style({
   gap: 24,
   display: 'grid',
@@ -13,11 +21,33 @@ export const grid = style({
   }
 })
 
+// Styles for individual items within the grid
 export const item = style({
   padding: 24,
   display: 'flex',
-  borderRadius: 8,
+  borderRadius: 4,
+  position: 'relative',
   flexDirection: 'column',
   justifyContent: 'center',
-  border: '1px solid #b1b1b1'
+  border: '1px solid #ced4da'
+})
+
+// Styles for the "Load more" button
+export const button = style({
+  fontSize: 16,
+  borderRadius: 4,
+  lineHeight: 1.5,
+  fontWeight: 500,
+  outline: 'none',
+  color: '#212529',
+  cursor: 'pointer',
+  background: 'none',
+  alignSelf: 'center',
+  padding: '12px 32px',
+  border: '1px solid #ced4da',
+  transition: 'all 0.2s ease-in-out',
+  ':hover': {
+    color: '#084dde',
+    borderColor: '#084dde'
+  }
 })

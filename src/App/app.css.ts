@@ -7,10 +7,12 @@ globalStyle('*', {
   boxSizing: 'border-box'
 })
 
+// Body
 globalStyle('body', {
-  backgroundColor: '#ffffff'
+  backgroundColor: '#f8f9fa'
 })
 
+// Root
 globalStyle('#root', {
   gap: 64,
   display: 'grid',
@@ -22,5 +24,5 @@ export const main = style({
   width: '100%',
   maxWidth: 1072,
   margin: '0 auto',
-  padding: '0 24px'
+  padding: '0 24px 64px 24px'
 })
