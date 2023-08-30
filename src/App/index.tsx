@@ -2,7 +2,7 @@
 import { Suspense } from 'react'
 
 // Wouter
-import { Route } from 'wouter'
+import { Route, Switch } from 'wouter'
 
 // Styles
 import { main } from './app.css'
@@ -10,6 +10,7 @@ import { main } from './app.css'
 // Pages
 import Stories from '../Page/Stories'
 import Comments from '../Page/Comments'
+import NotFound from '../Page/NotFound'
 import Favorites from '../Page/Favorites'
 
 // Components
@@ -23,11 +24,17 @@ export default function App () {
 
       <main className={main}>
         <Suspense fallback={null}>
-          <Route path="/" component={Stories} />
+          <Switch>
+            <Route path="/" component={Stories} />
 
-          <Route path="/favorites" component={Favorites} />
+            <Route path="/favorites" component={Favorites} />
 
-          <Route path="/article/:id" component={Comments} />
+            <Route path="/article/:id" component={Comments} />
+
+            <Route>
+              <NotFound />
+            </Route>
+          </Switch>
         </Suspense>
       </main>
     </>
