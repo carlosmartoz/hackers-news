@@ -14,8 +14,8 @@ import { section, article, header, top, back, title, divider, content } from './
 import { getItemInfo } from '../../Services/hacker-news'
 
 // Components
-import { CommentLoader } from '../../Components/CommentLoader'
-import { ListOfComments } from '../../Components/ListOfComments'
+import CommentLoader from '../../Components/CommentLoader'
+import ListOfComments from '../../Components/ListOfComments'
 
 export default function Comments ({ params }: { params: { id: string } }) {
   // Fetching All Comments

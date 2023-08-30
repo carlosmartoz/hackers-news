@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 // Custom hook for managing favorite stories
-export function useFavorites (id: number) {
+export const useFavorites = (id: number) => {
   // Check if the story with the given ID is already marked as a favorite
   const isFavorite = localStorage.getItem(`favorite_${id}`) === 'true'
 

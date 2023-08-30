@@ -2,9 +2,9 @@
 import { list, item } from './listOfComments.css'
 
 // Components
-import { Comment } from '../Comment'
+import Comment from '../Comment'
 
-export const ListOfComments = ({ ids }: { ids: number[] }) => {
+export default function ListOfComments ({ ids }: { ids: number[] }) {
   return (
     <>
       <ul className={list}>

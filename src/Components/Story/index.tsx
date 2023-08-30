@@ -21,9 +21,9 @@ import { getRelativeTime } from '../../Utils/getRelativeTime'
 import { getItemInfo } from '../../Services/hacker-news'
 
 // Components
-import { StoryLoader } from '../StoryLoader'
+import StoryLoader from '../StoryLoader'
 
-export const Story = ({ id, onRemove }: { id: number, onRemove?: (idToRemove: number) => void }) => {
+export default function Story ({ id, onRemove }: { id: number, onRemove?: (idToRemove: number) => void }) {
   // Fetching Story Data
   const { data, isLoading } = useSWR(`/story/${id}`, async () => await getItemInfo(id))
 

@@ -1,7 +1,7 @@
 // Styles
 import { loader, loaderItem } from './storyLoader.css'
 
-export const StoryLoader = () => {
+export default function StoryLoader () {
   return (
     <>
       <article className={loader}>

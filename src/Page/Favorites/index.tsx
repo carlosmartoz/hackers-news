@@ -7,9 +7,9 @@ import { useStories } from '../../Hooks/useStories'
 import { useRemoveFavorites } from '../../Hooks/useRemoveFavorite'
 
 // Components
-import { Nav } from '../../Components/Nav'
-import { Story } from '../../Components/Story'
-import { StoryLoader } from '../../Components/StoryLoader'
+import Nav from '../../Components/Nav'
+import Story from '../../Components/Story'
+import StoryLoader from '../../Components/StoryLoader'
 
 export default function Favorites () {
   // Use the custom Stories Hook

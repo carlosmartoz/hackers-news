@@ -5,9 +5,9 @@ import { section, grid, item, button } from './stories.css'
 import { useStories } from '../../Hooks/useStories'
 
 // Components
-import { Nav } from '../../Components/Nav'
-import { Story } from '../../Components/Story'
-import { StoryLoader } from '../../Components/StoryLoader'
+import Nav from '../../Components/Nav'
+import Story from '../../Components/Story'
+import StoryLoader from '../../Components/StoryLoader'
 
 export default function Stories () {
   // Use the custom Stories Hook

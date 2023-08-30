@@ -1,7 +1,7 @@
 // Styles
 import { header, nav, title, link } from './header.css'
 
-export const Header = () => {
+export default function Header () {
   return (
     <>
       <header className={header}>

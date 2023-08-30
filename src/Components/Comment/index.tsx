@@ -11,10 +11,10 @@ import { getRelativeTime } from '../../Utils/getRelativeTime'
 import { getItemInfo } from '../../Services/hacker-news'
 
 // Components
-import { CommentLoader } from '../CommentLoader'
-import { ListOfComments } from '../ListOfComments'
+import CommentLoader from '../CommentLoader'
+import ListOfComments from '../ListOfComments'
 
-export const Comment = ({ id }: { id: number }) => {
+export default function Comment ({ id }: { id: number }) {
   // Fetching Comment Data
   const { data, isLoading } = useSWR(`/comment/${id}`, async () => await getItemInfo(id))
 

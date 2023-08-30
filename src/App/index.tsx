@@ -13,7 +13,7 @@ import Comments from '../Page/Comments'
 import Favorites from '../Page/Favorites'
 
 // Components
-import { Header } from '../Components/Header'
+import Header from '../Components/Header'
 
 // App
 export default function App () {

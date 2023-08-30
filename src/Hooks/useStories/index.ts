@@ -7,7 +7,7 @@ import useSWRInfinite from 'swr/infinite'
 // Services
 import { getStories } from '../../Services/hacker-news'
 
-export function useStories () {
+export const useStories = () => {
   // Fetching stories using SWRInfinite hook
   const { data, isLoading, setSize, size } = useSWRInfinite(
     // Generating the key for each page

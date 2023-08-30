@@ -4,7 +4,7 @@ import { Link, useLocation } from 'wouter'
 // Styles
 import { menu, item, link } from './nav.css'
 
-export const Nav = () => {
+export default function Nav () {
   // Hook to get the pathname of the site
   const [location] = useLocation()
 

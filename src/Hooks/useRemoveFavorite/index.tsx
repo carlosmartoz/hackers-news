@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 // Custom hook for managing the list of favorite story IDs
-export function useRemoveFavorites () {
+export const useRemoveFavorites = () => {
   // Use state to store the list of favorite story IDs
   const [favoriteStoryIDs, setFavoriteStoryIDs] = useState<number[]>(() => {
     // Initialize the list of favorite story IDs from local storage
