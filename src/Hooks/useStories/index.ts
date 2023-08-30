@@ -27,6 +27,8 @@ export const useStories = () => {
   // State for indicating whether more data is being loaded
   const [isLoadingMore, setIsLoadingMore] = useState(false)
 
+  console.log(isLoadingMore)
+
   // Manage the state to give feedback about loading state
   const handleLoadMore = () => {
     setIsLoadingMore(true)
