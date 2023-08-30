@@ -11,7 +11,7 @@ import StoryLoader from '../../Components/StoryLoader'
 
 export default function Stories () {
   // Use the custom Stories Hook
-  const { stories, isLoading, isLoadingMore, handleLoadMore } = useStories()
+  const { stories, isLoading, size, setSize, isLoadingMore, isReachingEnd, setIsFetchingMore } = useStories()
 
   return (
     <>
@@ -41,8 +41,15 @@ export default function Stories () {
         </ul>
 
         {/* Button to load more Stories */}
-        <button onClick={handleLoadMore} className={button} disabled={isLoadingMore}>
-          {isLoadingMore ? 'Loading...' : 'Load more'}
+        <button
+          onClick={async () => {
+            await setSize(size + 1)
+            setIsFetchingMore(true)
+          }}
+          className={button}
+          disabled={isLoadingMore || isReachingEnd}
+        >
+          {isLoadingMore ? 'Loading...' : isReachingEnd ? 'No more stories' : 'Load More'}
         </button>
       </section>
     </>
