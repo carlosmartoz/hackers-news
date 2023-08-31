@@ -32,7 +32,7 @@
 
 ## 🚀 Production
 
-1. Generate a production build
+3. Generate a production build
 
    ```sh
    npm run build
