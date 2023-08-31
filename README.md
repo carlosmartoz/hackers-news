@@ -3,7 +3,7 @@
 <div align="center">
    <h3 align="center">Hackers News</h3>
 
-   <p align="center">Hackers News Project with React and TypeScript, fetching an API for the stories, comments and favorites.</p>
+   <p align="center">Hackers News Project with React and TypeScript, fetching an API for the stories, comments and favorite list.</p>
 </div>
 
 ## 💼 Used technologies
