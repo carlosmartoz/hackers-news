@@ -1,4 +1,4 @@
-import { keyframes, style, styleVariants } from '@vanilla-extract/css'
+import { style, styleVariants, keyframes } from '@vanilla-extract/css'
 
 // Define animation keyframes
 const background = keyframes({

@@ -1,3 +1,6 @@
+// React Icons
+import { BiLoaderAlt } from 'react-icons/bi'
+
 // Styles
 import { section, grid, item, button, loading } from './stories.css'
 
@@ -8,7 +11,6 @@ import { useStories } from '../../Hooks/useStories'
 import Nav from '../../Components/Nav'
 import Story from '../../Components/Story'
 import StoryLoader from '../../Components/StoryLoader'
-import { BiLoaderAlt } from 'react-icons/bi'
 
 export default function Stories () {
   // Use the custom Stories Hook
