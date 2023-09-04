@@ -24,32 +24,29 @@ export const header = style({
 
 // Comments Article Top Content
 export const top = style({
-  gap: 24,
+  gap: 8,
   display: 'flex',
   flexDirection: 'column',
   '@media': {
     'screen and (min-width: 768px)': {
-      flexDirection: 'row'
+      flexDirection: 'row',
+      alignItems: 'center'
     }
   }
 })
 
 // Comments Article Back
 export const back = style({
-  gap: 4,
-  fontSize: 18,
+  fontSize: 28,
   border: 'none',
   display: 'flex',
   outline: 'none',
-  fontWeight: 500,
-  lineHeight: 1.5,
   color: '#6c757d',
   cursor: 'pointer',
   background: 'none',
   alignItems: 'center',
   textDecoration: 'none',
   transition: 'all 0.2s ease-in-out',
-  fontFamily: 'Montserrat, sans-serif',
   ':hover': {
     color: '#212529'
   }

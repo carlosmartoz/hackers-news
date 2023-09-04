@@ -1,9 +1,6 @@
 // SWR
 import useSWR from 'swr'
 
-// Wouter
-import { Link } from 'wouter'
-
 // React Icons
 import { BiArrowBack } from 'react-icons/bi'
 
@@ -27,9 +24,9 @@ export default function Comments ({ params }: { params: { id: string } }) {
         <article className={article}>
           <header className={header}>
             <div className={top}>
-              <Link href="/" className={back}>
-                <BiArrowBack /> Back
-              </Link>
+              <a href="/" className={back}>
+                <BiArrowBack />
+              </a>
 
               <h1 className={title}>{data?.title}</h1>
             </div>
