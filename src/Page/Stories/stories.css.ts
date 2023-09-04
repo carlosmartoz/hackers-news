@@ -1,4 +1,4 @@
-import { style } from '@vanilla-extract/css'
+import { style, styleVariants, keyframes } from '@vanilla-extract/css'
 
 // Styles for the Stories section
 export const section = style({
@@ -32,13 +32,14 @@ export const item = style({
   border: '1px solid #ced4da'
 })
 
-// Styles for the "Load more" button
-export const button = style({
+// Styles for the "Load more" base button
+export const baseButton = style({
   fontSize: 16,
   borderRadius: 4,
   lineHeight: 1.5,
   fontWeight: 500,
   outline: 'none',
+  display: 'flex',
   color: '#212529',
   cursor: 'pointer',
   background: 'none',
@@ -50,4 +51,27 @@ export const button = style({
     color: '#084dde',
     borderColor: '#084dde'
   }
+})
+
+// Styles for the "Load more" buttons
+export const button = styleVariants({
+  base: [baseButton],
+  loading: [
+    baseButton,
+    {
+      color: '#084dde',
+      borderColor: '#084dde'
+    }
+  ]
+})
+
+// Rotate animation keyframes
+const rotate = keyframes({
+  '0%': { transform: 'rotate(0deg)' },
+  '100%': { transform: 'rotate(360deg)' }
+})
+
+// Use of Rotate animation for loading
+export const loading = style({
+  animation: `${rotate} 2s linear infinite`
 })

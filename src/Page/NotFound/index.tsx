@@ -9,7 +9,7 @@ export default function NotFound () {
   return (
     <>
       <section className={section}>
-        <h2 className={title}>404, Not Found!</h2>
+        <h2 className={title}>Page not found 😞</h2>
 
         <Link href="/" className={button}>
           Go Back

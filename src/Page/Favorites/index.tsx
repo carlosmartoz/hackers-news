@@ -46,7 +46,7 @@ export default function Favorites () {
             )}
           </ul>
         ) : (
-          <h2 className={title}>There are not favorites yet</h2>
+          <h2 className={title}>There are not favorites yet 😪</h2>
         )}
       </section>
     </>

@@ -46,6 +46,7 @@ export const link = styleVariants({
     {
       color: '#212529',
       border: '1px solid #adb5bd',
+      transition: 'all 0.2s ease-in-out',
       selectors: {
         'li:first-child > &': {
           borderRightWidth: 0
@@ -53,6 +54,10 @@ export const link = styleVariants({
         'li:last-child > &': {
           borderLeftWidth: 0
         }
+      },
+      ':hover': {
+        color: '#084dde',
+        borderColor: '#084dde'
       }
     }
   ],

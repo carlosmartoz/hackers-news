@@ -13,10 +13,12 @@ export const useFavorites = (id: number) => {
     if (favorite) {
       // If it's already a favorite, remove it from local storage and update state
       localStorage.removeItem(`favorite_${id}`)
+
       setFavorite(false)
     } else {
       // If it's not a favorite, mark it as a favorite in local storage and update state
       localStorage.setItem(`favorite_${id}`, 'true')
+
       setFavorite(true)
     }
   }

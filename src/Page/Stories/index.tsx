@@ -1,5 +1,5 @@
 // Styles
-import { section, grid, item, button } from './stories.css'
+import { section, grid, item, button, loading } from './stories.css'
 
 // Hooks
 import { useStories } from '../../Hooks/useStories'
@@ -8,6 +8,7 @@ import { useStories } from '../../Hooks/useStories'
 import Nav from '../../Components/Nav'
 import Story from '../../Components/Story'
 import StoryLoader from '../../Components/StoryLoader'
+import { BiLoaderAlt } from 'react-icons/bi'
 
 export default function Stories () {
   // Use the custom Stories Hook
@@ -46,10 +47,10 @@ export default function Stories () {
             await setSize(size + 1)
             setIsFetchingMore(true)
           }}
-          className={button}
+          className={isLoadingMore ? button.loading : button.base}
           disabled={isLoadingMore || isReachingEnd}
         >
-          {isLoadingMore ? 'Loading...' : isReachingEnd ? 'No more stories' : 'Load More'}
+          {isLoadingMore ? <BiLoaderAlt className={loading} /> : isReachingEnd ? 'No more stories' : 'Load More'}
         </button>
       </section>
     </>

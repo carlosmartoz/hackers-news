@@ -64,15 +64,16 @@ export default function Story ({ id, onRemove }: { id: number, onRemove?: (idToR
 
             {onRemove != null ? (
               <button
-                className={favorites}
+                className={isFavorite ? favorites.active : favorites.base}
                 onClick={() => {
                   onRemove(id)
+                  toggleFavorite()
                 }}
               >
                 {isFavorite ? <BiSolidHeart /> : <BiHeart />}
               </button>
             ) : (
-              <button className={favorites} onClick={toggleFavorite}>
+              <button className={isFavorite ? favorites.active : favorites.base} onClick={toggleFavorite}>
                 {isFavorite ? <BiSolidHeart /> : <BiHeart />}
               </button>
             )}

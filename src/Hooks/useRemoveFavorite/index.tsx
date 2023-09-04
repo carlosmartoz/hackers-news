@@ -12,14 +12,16 @@ export const useRemoveFavorites = () => {
 
   // Function to remove a story from the list of favorite story IDs
   const removeFavorite = (idToRemove: number) => {
-    // Filter out the ID to remove from the list of favorites
-    const updatedFavorites = favoriteStoryIDs.filter((id) => id !== idToRemove)
+    setTimeout(() => {
+      // Filter out the ID to remove from the list of favorites
+      const updatedFavorites = favoriteStoryIDs.filter((id) => id !== idToRemove)
 
-    // Update the list of favorite story IDs in state
-    setFavoriteStoryIDs(updatedFavorites)
+      // Update the list of favorite story IDs in state
+      setFavoriteStoryIDs(updatedFavorites)
 
-    // Remove the story from local storage
-    localStorage.removeItem(`favorite_${idToRemove}`)
+      // Remove the story from local storage
+      localStorage.removeItem(`favorite_${idToRemove}`)
+    }, 200)
   }
 
   // Load favorite story IDs from local storage when the component mounts

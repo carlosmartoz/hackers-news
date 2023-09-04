@@ -80,17 +80,28 @@ export const text = styleVariants({
   ]
 })
 
-// Story Content Favorites
-export const favorites = style({
+// Story Content Base Favorites
+export const baseFavorites = style({
   zIndex: 1,
   fontSize: 32,
   border: 'none',
   outline: 'none',
-  color: '#d62828',
+  color: '#212529',
   cursor: 'pointer',
   background: 'none',
   transition: 'all 0.2s ease-in-out',
   ':hover': {
-    transform: 'scale(1.1)'
+    color: '#d62828'
   }
+})
+
+// Story Content Favorites
+export const favorites = styleVariants({
+  base: [baseFavorites],
+  active: [
+    baseFavorites,
+    {
+      color: '#d62828'
+    }
+  ]
 })
