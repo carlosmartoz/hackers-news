@@ -3,7 +3,7 @@
 <div align="center">
    <h3 align="center">Hackers News</h3>
 
-   <p align="center">Hackers News Project with React and TypeScript, fetching an API for the stories, comments and favorite list.</p>
+   <p align="center">Web application for a technical test, displays articles via an API and allows saving articles as favorites.</p>
 </div>
 
 ## 💼 Skills
