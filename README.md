@@ -8,11 +8,11 @@
 
 ## 💼 Skills
 
-![](https://img.shields.io/badge/HTML-informational?style=for-the-badge&logo=htm5l&logoColor=edf2f4&color=0b1622&labelColor=ff0000)
-![](https://img.shields.io/badge/CSS-informational?style=for-the-badge&logo=css3&logoColor=edf2f4&color=0b1622&labelColor=ff0000)
-![](https://img.shields.io/badge/JavaScript-informational?style=for-the-badge&logo=JavaScript&logoColor=edf2f4&color=0b1622&labelColor=ff0000)
-![](https://img.shields.io/badge/TypeScript-informational?style=for-the-badge&logo=typescript&logoColor=edf2f4&color=0b1622&labelColor=ff0000)
-![](https://img.shields.io/badge/React-informational?style=for-the-badge&logo=react&logoColor=edf2f4&color=0b1622&labelColor=ff0000)
+![](https://img.shields.io/badge/HTML5-informational?style=for-the-badge&logo=htm5l&logoColor=EDF2F4&color=0B1622&labelColor=FF0000)
+![](https://img.shields.io/badge/CSS3-informational?style=for-the-badge&logo=css3&logoColor=EDF2F4&color=0B1622&labelColor=FF0000)
+![](https://img.shields.io/badge/JavaScript-informational?style=for-the-badge&logo=JavaScript&logoColor=EDF2F4&color=0B1622&labelColor=FF0000)
+![](https://img.shields.io/badge/TypeScript-informational?style=for-the-badge&logo=typescript&logoColor=EDF2F4&color=0B1622&labelColor=FF0000)
+![](https://img.shields.io/badge/React.js-informational?style=for-the-badge&logo=react&logoColor=EDF2F4&color=0B1622&labelColor=FF0000)
 
 ## 🛠 Installation
 
