@@ -6,7 +6,7 @@
    <p>Web application for a technical test, displays articles via an API and allows saving articles as favorites.</p>
 </div>
 
-## 🛠 Installation
+## Installation
 
 1. Install dependencies
 
@@ -14,7 +14,7 @@
    npm install
    ```
 
-## 🛠 Development
+## Development
 
 2. Start the development server
 
@@ -22,7 +22,7 @@
    npm run dev
    ```
 
-## 🚀 Production
+## Production
 
 3. Generate a production build
 
